@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.8'
+gem 'rails' , '4.2.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'bower-rails'
+gem 'angular-rails-templates'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,6 +19,13 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :development, :test do
+  gem 'jslint_on_rails'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 gem 'jquery-rails'
