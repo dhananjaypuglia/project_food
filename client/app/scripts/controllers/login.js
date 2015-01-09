@@ -10,11 +10,14 @@
 angular.module('clientApp')
   .controller('LoginCtrl', LoginController);
 
-LoginController.$inject = ['$scope'];
+LoginController.$inject = ['$scope,userService'];
 
-function LoginController($scope) {
+function LoginController($scope,userService) {
   $scope.login = login;
   function login(){
     console.log("Loggin");
+    userService.query().$promise.then(function(success){
+      console.log(success);
+    });
   }
 }
