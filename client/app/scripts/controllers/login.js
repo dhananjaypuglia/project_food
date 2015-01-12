@@ -1,4 +1,5 @@
-'use strict';
+(function () {
+  'use strict';
 
 /**
  * @ngdoc function
@@ -10,14 +11,14 @@
 angular.module('clientApp')
   .controller('LoginCtrl', LoginController);
 
-LoginController.$inject = ['$scope,userService'];
+LoginController.$inject = ['$scope','userService'];
 
 function LoginController($scope,userService) {
   $scope.login = login;
   function login(){
-    console.log("Loggin");
-    userService.query().$promise.then(function(success){
+    console.log("Login");
+    userService.create({username: 'a',password:'a'}).$promise.then(function(success){
       console.log(success);
     });
   }
-}
+}})();
